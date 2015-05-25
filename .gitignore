@@ -10,3 +10,4 @@
 ## Codekit ##
 .codekit-cache
 config.codekit
+/zepto.min.js
