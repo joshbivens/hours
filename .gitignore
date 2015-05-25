@@ -3,3 +3,10 @@
 # Example .gitignore files: https://github.com/github/gitignore
 /bower_components/
 /node_modules/
+
+## Sass ##
+.sass-cache
+
+## Codekit ##
+.codekit-cache
+config.codekit
