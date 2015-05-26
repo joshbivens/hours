@@ -7,9 +7,10 @@ body {
   justify-content: center;
   background: url("http://subtlepatterns.com/patterns/restaurant.png");
   font-family: Arial, sans-serif; }
-  body p {
-    margin: 0;
-    padding: 0; }
+
+p {
+  margin: 0;
+  padding: 0; }
 
 .listbox {
   background: #FFF;
@@ -19,13 +20,17 @@ body {
   padding: 15px;
   min-width: 340px;
   display: flex; }
-  .listbox ul {
-    margin: 0;
-    padding: 15px;
-    list-style: none; }
-    .listbox ul li {
-      padding: 8px;
-      color: #777; }
-      .listbox ul li span {
-        font-weight: 700;
-        color: #000; }
+
+ul {
+  margin: 0;
+  padding: 15px;
+  list-style: none; }
+
+ul li {
+	padding: 5px 10px;
+}
+
+ul:first-child li:first-child {
+    font-weight: 700;
+    color: #000; }
+
