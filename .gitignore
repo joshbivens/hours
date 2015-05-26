@@ -10,6 +10,8 @@
 ## Codekit ##
 .codekit-cache
 config.codekit
+
+## Zepto ##
 /zepto.min.js
 
 ## Jade ##
