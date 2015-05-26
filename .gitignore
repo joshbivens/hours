@@ -6,8 +6,12 @@
 
 ## Sass ##
 .sass-cache
+hours.sass
 
 ## Codekit ##
 .codekit-cache
 config.codekit
 /zepto.min.js
+
+## Jade ##
+index.jade
