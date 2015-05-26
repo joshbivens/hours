@@ -1,1 +1,0 @@
-$(document).ready(function(){var e=new Date,o=e.getDay(),c=e.getHours();o>0&&5>o?c>=9&&19>c&&$("#open-close").html("<p>Open</p>").css("color","#4be74b"):o>5&&7>o?c>=9&&21>c&&$("#open-close").html("<p>Open</p>").css("color","#4be74b"):$("#open-close").html("<p>Closed</p>").css("color","#fb260e")});
