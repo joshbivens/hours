@@ -11,8 +11,5 @@
 .codekit-cache
 config.codekit
 
-## Zepto ##
-/js/zepto.min.js
-
 ## Min ##
 /js/min
