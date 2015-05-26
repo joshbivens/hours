@@ -12,7 +12,7 @@
 config.codekit
 
 ## Zepto ##
-js/zepto.min.js
+/js/zepto.min.js
 
-## Jade ##
-index.jade
+## Min ##
+/js/min
