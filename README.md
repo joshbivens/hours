@@ -1,2 +1,4 @@
 # hours
-An open hours list for a business with a bit of JavaScript that checks to see if the business is open and appends either "Open" or "Closed" in the corner.
+An open hours list for a business with JavaScript providing an "open" or "closed" sign in the corner.
+
+[Codepen here](http://codepen.io/joshbivens/pen/ByvQwO)
