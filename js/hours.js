@@ -5,10 +5,10 @@ $(document).ready(function () {
   var hour = date.getHours();
 
   //Logic variables
-  var openMT = hour >= 9 && hour < 19 && day > 0 && day < 5 ? true : false;
-  var openFS = hour >= 9 && hour < 21 && day > 3 && day < 6  ? true : false;
-	var closedMT = hour >= 19 && hour < 9 && day > 0 && day < 5 ? true : false;
-	var closedFS = hour >= 21 && hour < 9 && day > 3 && day < 6 ? true : false;
+  var openMT = hour > 8 && hour < 19 && day > 0 && day < 5 ? true : false;
+  var openFS = hour > 8 && hour < 21 && day > 3 && day < 6  ? true : false;
+	var closedMT = hour > 18 && day > 0 && day < 5 ? true : false;
+	var closedFS = hour > 20 && day > 3 && day < 6 ? true : false;
 
   //Tags
   var openBox = $('ul:last-child li:first-child');
@@ -38,8 +38,18 @@ $(document).ready(function () {
 	//Return hours left till open
 	var closedFor = function () {
 		var x = 0;
-		if (closedMT) {
-			x = Math.abs(hour)
+		if (closedMT || closedFS) {
+			if (hour === 0) {
+				x = 9;
+			} else {
+				x = 33 - hour;
+			}
+		} else { //if Sunday
+			if (hour === 0) {
+				x = 33;
+			} else {
+				x = 57 - hour;
+			}
 		}
 	}
 
