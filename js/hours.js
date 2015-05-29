@@ -22,7 +22,6 @@ $(document).ready(function () {
   	//into the title attr of a tooltip when openBox is hovered
     $(openBox).on('mouseover', function(){
       $(this).prop('title', 'We\'re open for another ' + openFor + ' hour(s)');
-			console.log(hour);
     })
   } else {
     openBox.html(closed);
