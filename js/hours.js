@@ -1,31 +1,38 @@
 $(document).ready(function () {
   //Date variables
-  var date = new Date();
-  var day = date.getDay();
-  var hour = date.getHours();
+  var date = new Date(),
+			day = date.getDay(),
+ 			hour = date.getHours();
 
   //Logic variables
-  var openMT = hour > 8 && hour < 19 && day > 0 && day < 5 ? true : false;
-  var openFS = hour > 8 && hour < 21 && day > 3 && day < 6  ? true : false;
-	var closedMT = hour > 18 && day > 0 && day < 5 ? true : false;
-	var closedFS = hour > 20 && day > 3 && day < 6 ? true : false;
+  var openMT = hour > 8 && hour < 19 && day > 0 && day < 5 ? true : false,
+  		openFS = hour > 8 && hour < 21 && day > 3 && day < 6  ? true : false,
+	 		closedMT = hour > 18 && day > 0 && day < 5 ? true : false,
+	 		closedFS = hour > 20 && day > 3 && day < 6 ? true : false;
 
   //Tags
-  var openBox = $('ul:last-child li:first-child');
-  var open = $('<b>Open</b>').css('color', '#4be74b');
-  var closed = $('<b>Closed</b>').css('color', '#fb260e');
+  var openBox = $('ul:last-child li:first-child'),
+			open = $('<b>Open</b>').css('color', '#4be74b'),
+			closed = $('<b>Closed</b>').css('color', '#fb260e');
 
   //Checks the day/hour; If open, displays "Open", else displays "Closed"
-  if (openMT) {
+  if (openMT || openFS) {
     openBox.html(open);
-  } else if (openFS) {
-    openBox.html(open);
+		//Inserts a message with either openFor or closedFor
+  	//into the title attr of a tooltip when openBox is hovered
+    $(openBox).on('mouseover', function(){
+      $(this).prop('title', 'We\'re open for another ' + openFor + ' hour(s)');
+			console.log(hour);
+    })
   } else {
     openBox.html(closed);
+    $(openBox).on('mouseover', function(){
+      $(this).prop('title', 'We\'ll be closed for another' + closedFor + ' hour(s)')
+    })
   }
 
 	//Returns hours left till close
-	var openFor = function () {
+	var openFor = (function () {
 		var x = 0;
 		if (openMT) {
 			x = 19 - hour;
@@ -33,10 +40,10 @@ $(document).ready(function () {
 			x = 21 - hour;
 		}
 		return x;
-	};
+	})();
 
 	//Return hours left till open
-	var closedFor = function () {
+	var closedFor = (function () {
 		var x = 0;
 		if (closedMT || closedFS) {
 			if (hour === 0) {
@@ -51,6 +58,6 @@ $(document).ready(function () {
 				x = 57 - hour;
 			}
 		}
-	}
+	})();
 
 });
