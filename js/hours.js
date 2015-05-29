@@ -53,18 +53,11 @@ $(document).ready(function () {
 	var closedFor = (function () {
 		var x = 0;
 		if (closedMT || closedFS) {
-			if (hour === 0) {
-				x = 9;
-			} else {
-				x = 33 - hour;
-			}
+			return hour === 0 ? x = 9 : x = 33 - hour;
 		} else { //if Sunday
-			if (hour === 0) {
-				x = 33;
-			} else {
-				x = 57 - hour;
-			}
+			return hour === 0 ? x = 33 : x = 57 - hour;
 		}
+		return x;
 	})();
 
 });
