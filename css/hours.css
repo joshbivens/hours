@@ -37,6 +37,6 @@ ul li {
 }
 
 ul:first-child li:first-child {
-    font-weight: 700;
-    color: #000;
+  font-weight: 700;
+  color: #000;
 }
