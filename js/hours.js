@@ -42,9 +42,9 @@ $(document).ready(function () {
 	var openFor = (function () {
 		var x = 0;
 		if (openMT) {
-			x = 19 - hour;
+			x = 18 - hour;
 		} else if (openFS) {
-			x = 21 - hour;
+			x = 20 - hour;
 		}
 		return x;
 	})();
