@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
   //Date variables
   var date = new Date();
   var day = date.getDay();
@@ -14,11 +14,11 @@ $(document).ready(function(){
   var closed = $('<b>Closed</b>').css('color', '#fb260e');
 
   //Checks the day/hour; If open, displays "Open", else displays "Closed"
-  if(openMT){
+  if (openMT) {
     openBox.html(open);
-  }else if(openFS){
+  } else if (openFS) {
     openBox.html(open);
-  }else{
+  } else {
     openBox.html(closed);
   }
 
