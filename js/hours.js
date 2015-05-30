@@ -6,14 +6,22 @@ $(document).ready(function () {
 
   //Logic variables
   var openMT = hour > 8 && hour < 19 && day > 0 && day < 5 ? true : false,
-  		openFS = hour > 8 && hour < 21 && day > 3 && day < 6  ? true : false,
+  		openFS = hour > 8 && hour < 21 && day === 5 || day === 6  ? true : false,
 	 		closedMT = hour > 18 && day > 0 && day < 5 ? true : false,
-	 		closedFS = hour > 20 && day > 3 && day < 6 ? true : false;
+	 		closedFS = hour > 20 && day === 5 || day === 6 ? true : false;
+
+  //Sun - 0
+  //Mon - 1
+  //Tue - 2
+  //Wed - 3
+  //Thu - 4
+  //Fri - 5
+  //Sat - 6
 
   //Tags
   var openBox = $('ul:last-child li:first-child'),
-			open = $('<b>Open</b>').css('color', '#4be74b'),
-			closed = $('<b>Closed</b>').css('color', '#fb260e');
+			open = $('<b><u>Open</u></b>').css('color', '#4be74b'),
+			closed = $('<b><u>Closed</u></b>').css('color', '#fb260e');
 
   //Checks the day/hour; If open, displays "Open", else displays "Closed"
   if (openMT || openFS) {
@@ -33,11 +41,10 @@ $(document).ready(function () {
 			if (closedFor === 1) {
       	$(this).prop('title', 'We\'ll be closed for another hour');
 			} else {
-				$(this).prop('title', 'We\'ll be closed for another' + closedFor + ' hour(s)');
+				$(this).prop('title', 'We\'ll be closed for another ' + closedFor + ' hour(s)');
 			}
     })
   }
-
 	//Returns hours left till close
 	var openFor = (function () {
 		var x = 0;
