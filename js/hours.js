@@ -40,25 +40,25 @@ $(document).ready(function () {
   }
 
 //Returns hours left till close
-var openFor = (function () {
-var x = 0;
-if (openMT) {
-x = 18 - hour;
-} else if (openFS) {
-x = 20 - hour;
-}
-return x;
-})();
+  var openFor = (function () {
+    var x = 0;
+    if (openMT) {
+      x = 18 - hour;
+    } else if (openFS) {
+      x = 20 - hour;
+    }
+    return x;
+  })();
 
 //Return hours left till open
-var closedFor = (function () {
-var x = 0;
-if (closedMT || closedFS) {
-return hour === 0 ? x = 9 : x = 33 - hour;
-} else { //if Sunday
-return hour === 0 ? x = 33 : x = 57 - hour;
-}
-return x;
-})();
+  var closedFor = (function () {
+    var x = 0;
+    if (closedMT || closedFS) {
+      return hour === 0 ? x = 9 : x = 33 - hour;
+    } else { //if Sunday
+      return hour === 0 ? x = 33 : x = 57 - hour;
+    }
+    return x;
+  })();
 
 });
