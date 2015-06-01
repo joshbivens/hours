@@ -8,12 +8,7 @@ body {
   align-items: center;
   justify-content: center;
   background: url("http://subtlepatterns.com/patterns/restaurant.png");
-  font-family: 'Roboto', Arial, sans-serif;
-}
-
-p {
-  margin: 0;
-  padding: 0;
+  font-family: Roboto, sans-serif;
 }
 
 .listbox {
@@ -26,6 +21,15 @@ p {
   display: flex;
 }
 
+ul:first-child li:first-child {
+  font-weight: 700;
+  color: #000;
+}
+
+ul:last-child li:first-child {
+  cursor: pointer;
+}
+
 ul {
   margin: 0;
   padding: 15px;
@@ -33,10 +37,6 @@ ul {
 }
 
 ul li {
-  padding: 5px 10px;
-}
-
-ul:first-child li:first-child {
-  font-weight: 700;
-  color: #000;
+  padding: 8px;
+  color: #777;
 }
