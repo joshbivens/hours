@@ -7,8 +7,8 @@ $(document).ready(function() {
   //Logic variables
   var openMT = hour > 8 && hour < 19 && day > 0 && day < 5 ? true : false,
       openFS = hour > 8 && hour < 21 && day === 5 || day === 6 ? true : false,
-      closedMT = hour > 18 && day > 0 && day < 5 ? true : false,
-      closedFS = hour > 20 && day === 5 || day === 6 ? true : false;
+      closedMT = hour > 18 || hour < 9 && day > 0 && day < 5 ? true : false,
+      closedFS = hour > 20  || hour < 9 && day === 5 || day === 6 ? true : false;
 
   //Sun - 0
   //Mon - 1
@@ -62,7 +62,7 @@ $(document).ready(function() {
     if (closedMT || closedFS) {
       if(hour === 0){
         x = 9;
-      }else if(hour > 0){
+      }else if(hour > 0 && hour < 17){
         x = 9 - hour;
       }else if(hour > 17){
         x = 33 - hour;
