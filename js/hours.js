@@ -51,9 +51,9 @@ $(document).ready(function() {
   var openFor = (function() {
     var x = 0;
     if (openMT) {
-      x = 18 - hour;
+      x = 17 - hour;
     } else if (openFS) {
-      x = 20 - hour;
+      x = 19 - hour;
     }
     return x;
   })();
