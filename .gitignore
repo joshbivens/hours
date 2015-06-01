@@ -12,8 +12,5 @@ config.codekit
 
 ## Min ##
 /js/min
-/bower_components/zepto/.bower.json
-/bower_components/zepto/component.json
-/bower_components/zepto/composer.json
 /bower_components/zepto/zepto.js
 /bower_components/zepto/zepto.min.js
