@@ -2,7 +2,9 @@ $(document).ready(function() {
   //Date variables
   var date = new Date(),
       day = date.getDay(),
-      hour = date.getHours();
+      hour = date.getHours(),
+      minutes = date.getMinutes(),
+      minFrom60 = 60 - minutes;
 
   //Logic variables
   var openMT = hour > 8 && hour < 19 && day > 0 && day < 5 ? true : false,
@@ -30,18 +32,18 @@ $(document).ready(function() {
     //into the title attr of a tooltip when openBox is hovered
     $(openBox).on('mouseover', function() {
       if (openFor === 1) {
-        $(this).prop('title', 'We\'re open for another hour');
+        $(this).prop('title', 'We\'re open for ' + minFrom60 + ' more minutes');
       } else {
-        $(this).prop('title', 'We\'re open for another ' + openFor + ' hours');
+        $(this).prop('title', 'We\'re open for another ' + openFor + ' hours and ' + minFrom60 + ' minutes');
       }
     })
   } else {
     openBox.html(closed);
     $(openBox).on('mouseover', function() {
       if (closedFor === 1) {
-        $(this).prop('title', 'We\'ll be closed for another hour');
+        $(this).prop('title', 'We\'ll be closed for another ' + minFrom60 + ' minutes');
       } else {
-        $(this).prop('title', 'We\'ll be closed for another ' + closedFor + ' hours');
+        $(this).prop('title', 'We\'ll be closed for another ' + closedFor + ' hours and ' + minFrom60 + ' minutes');
       }
     })
   }
