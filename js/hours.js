@@ -31,7 +31,7 @@ $(document).ready(function() {
     //Inserts a message with either openFor or closedFor
     //into the title attr of a tooltip when openBox is hovered
     $(openBox).on('mouseover', function() {
-      if (openFor === 1) {
+      if (openFor === 0) {
         $(this).prop('title', 'We\'re open for ' + minFrom60 + ' more minutes');
       } else {
         $(this).prop('title', 'We\'re open for another ' + openFor + ' hours and ' + minFrom60 + ' minutes');
@@ -40,7 +40,7 @@ $(document).ready(function() {
   } else {
     openBox.html(closed);
     $(openBox).on('mouseover', function() {
-      if (closedFor === 1) {
+      if (closedFor === 0) {
         $(this).prop('title', 'We\'ll be closed for another ' + minFrom60 + ' minutes');
       } else {
         $(this).prop('title', 'We\'ll be closed for another ' + closedFor + ' hours and ' + minFrom60 + ' minutes');
