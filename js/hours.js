@@ -65,7 +65,7 @@ $(document).ready(function() {
       if(hour === 0){
         x = 9;
       }else if(hour > 0 && hour < 17){
-        x = 9 - hour;
+        x = 8 - hour;
       }else if(hour > 17){
         x = 33 - hour;
       }
