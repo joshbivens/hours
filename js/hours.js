@@ -7,10 +7,10 @@ $(document).ready(function() {
       minFrom60 = 60 - minutes;
 
   //Logic variables
-  var openMT = hour > 8 && hour < 19 && day > 0 && day < 5 ? true : false,
-      openFS = hour > 8 && hour < 21 && day === 5 || day === 6 ? true : false,
-      closedMT = hour > 18 || hour < 9 && day > 0 && day < 5 ? true : false,
-      closedFS = hour > 20  || hour < 9 && day === 5 || day === 6 ? true : false;
+  var openMT = hour > 8 && hour < 18 && day > 0 && day < 5 ? true : false,
+      openFS = hour > 8 && hour < 20 && day === 5 || day === 6 ? true : false,
+      closedMT = hour > 17 || hour < 9 && day > 0 && day < 5 ? true : false,
+      closedFS = hour > 19  || hour < 9 && day === 5 || day === 6 ? true : false;
 
   //Sun - 0
   //Mon - 1
@@ -37,7 +37,7 @@ $(document).ready(function() {
         $(this).prop('title', 'We\'re open for another ' + openFor + ' hours and ' + minFrom60 + ' minutes');
       }
     })
-  } else {
+   } else {
     openBox.html(closed);
     $(openBox).on('mouseover', function() {
       if (closedFor === 0) {
