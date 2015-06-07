@@ -7,11 +7,10 @@ $(document).ready(function() {
       minFrom60 = 60 - minutes;
 
   //Logic variables
-  var openMT = hour > 8 && hour < 18 && day > 0 && day < 5 ? true : false,
-      openFS = hour > 8 && hour < 20 && day === 5 || day === 6 ? true : false,
-      closedMT = hour > 17 || hour < 9 && day > 0 && day < 5 ? true : false,
-      closedFS = hour > 19  || hour < 9 && day === 5 || day === 6 ? true : false;
-
+  var openMT = (8 < hour && hour < 18) && (0 < day && day < 5) ? true : false,
+      openFS = (8 < hour && hour < 20) && (day === 5 || day === 6) ? true : false,
+      closedMT = (hour > 17 || hour < 9) && (0 < day && day < 5) ? true : false,
+      closedFS = (hour > 19 || hour < 9) && (day === 5 || day === 6) ? true : false;
   //Sun - 0
   //Mon - 1
   //Tue - 2
