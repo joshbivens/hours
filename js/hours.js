@@ -32,6 +32,8 @@ $(document).ready(function() {
     $(openBox).on('mouseover', function() {
       if (openFor === 0) {
         $(this).prop('title', 'We\'re open for ' + minFrom60 + ' more minutes');
+      } else if(openFor === 1) {
+        $(this).prop('title', 'We\'re open for another 1 hour and ' + minFrom60 + ' minutes');
       } else {
         $(this).prop('title', 'We\'re open for another ' + openFor + ' hours and ' + minFrom60 + ' minutes');
       }
@@ -41,6 +43,8 @@ $(document).ready(function() {
     $(openBox).on('mouseover', function() {
       if (closedFor === 0) {
         $(this).prop('title', 'We\'ll be closed for another ' + minFrom60 + ' minutes');
+      } else if (closedFor === 1) {
+        $(this).prop('title', 'We\'ll be closed for another 1 hour and ' + minFrom60 + ' minutes');
       } else {
         $(this).prop('title', 'We\'ll be closed for another ' + closedFor + ' hours and ' + minFrom60 + ' minutes');
       }
