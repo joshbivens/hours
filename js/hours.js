@@ -21,8 +21,8 @@ $(document).ready(function() {
 
   //Tags
   var openBox = $('ul:last-child li:first-child'),
-      open = $('<b><u>Open</u></b>').css('color', '#4be74b'),
-      closed = $('<b><u>Closed</u></b>').css('color', '#fb260e');
+      open = $('<b>Open</b><i class="fa fa-question-circle"></i>').css('color', '#4be74b'),
+      closed = $('<b>Closed</b><i class="fa fa-question-circle"></i>').css('color', '#fb260e');
 
   //Checks the day/hour; If open, displays "Open", else displays "Closed"
   if (openMT || openFS) {
